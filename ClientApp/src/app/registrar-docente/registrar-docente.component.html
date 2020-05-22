@@ -1,0 +1,40 @@
+<div class="Estudiante">
+    <h1>Registrar Docente</h1>
+    <label ><a><i class="fa fa-envelope"></i> Imail</a></label><input [(ngModel)]="docente.email" [ngModelOptions]="{standalone: true}" type="text" placeholder="Enter Email" name="email" required>
+    <label ><a><i class="fa fa-user"></i> Nombre</a></label><input [(ngModel)]="docente.nombre" [ngModelOptions]="{standalone: true}" type="text" placeholder="Nombre" name="nombre" required>
+    <label ><a><i class="fa fa-user"></i> Usuario</a></label><input [(ngModel)]="docente.usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Usuario" name="usuario" required>
+    <label ><a><i class="fa fa-user"></i> Apellidos</a></label><input [(ngModel)]="docente.apellido" [ngModelOptions]="{standalone: true}" type="text" placeholder="Apellidos" name="Apellidos" required>
+    <label ><a><i class="fa fa-unlock-alt"></i> Contraseña</a></label><input [(ngModel)]="docente.clave" [ngModelOptions]="{standalone: true}" type="password" placeholder="Contraseña" name="psw" required>
+    <label ><a><i class="fa fa-calendar"></i> FechaN</a></label><input [(ngModel)]="docente.fechan" [ngModelOptions]="{standalone: true}" type="date" name="fechaN">
+    <label ><a><i class="fa fa-graduation-cap"></i> Asignar Curso</a></label>
+    <select [(ngModel)]="docente.salon" [ngModelOptions]="{standalone: true}">
+      <option selected>Seleccione </option>
+      <option value="°6">°6</option>
+      <option value="°7">°7</option>
+      <option value="°8">°8</option>
+      <option value="°9">°9</option>
+      <option value="°10">°10</option>
+      <option value="°11">°11</option>
+    </select>
+    <label ><a><i class="fa fa-id-card"></i> Documento</a></label><input [(ngModel)]="docente.documento" [ngModelOptions]="{standalone: true}" type="text" placeholder="Documento" name="documento" required>
+    <label ><a><i class="fa fa-users"></i> Lic </a></label><select [(ngModel)]="docente.lic" [ngModelOptions]="{standalone: true}">
+      <option selected>Seleccione </option>
+      <option value="°Matematicas">°Matematicas</option>
+      <option value="°Sociales">°Sociales</option>
+      <option value="°Lenguas">°Lenguas</option>
+      <option value="°Biologia">°Biologia</option>
+      <option value="°Artistica">°Artistica</option>
+      <option value="°Deportes">°Deportes</option>
+    </select>
+    <label ><a><i class="fa fa-phone"></i> Telefono</a></label><input [(ngModel)]="docente.telefono" [ngModelOptions]="{standalone: true}" type="text" placeholder="Telefono" name="telefono" required>
+    <label ><a><i class="fa fa-male"></i> Sexo</a></label><select [(ngModel)]="docente.sexo" [ngModelOptions]="{standalone: true}">
+      <option selected>Seleccione</option>
+      <option value="Hombre">Hombre</option>
+      <option value="Mujer">Mujer</option>
+    </select>
+    <label ><a><i class="fa fa-male"></i> Estado</a></label><select [(ngModel)]="docente.estado" [ngModelOptions]="{standalone: true}">
+      <option selected>Seleccione</option>
+      <option value="ACTIVO">Activo</option>
+      <option value="INACTIVO">Inactivo</option>
+    </select>
+    <button (click)="add()" class="fa fa-folder"> Archivar</button>

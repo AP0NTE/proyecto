@@ -1,0 +1,35 @@
+<h2>Eliminar Docentes</h2>
+<input type="text" id="myInput"  placeholder="Buscar.." title="Type in a name">
+<input class="input" type="submit" (click)="myFunction() "value="Buscar">
+<table id="myTable" >
+  <tr class="header">
+      <th>Id</th>
+      <th>Documento</th>
+      <th>Apellidos</th>
+      <th>Nombre</th>
+      <th>Fecha  De Nacimiento</th>
+      <th>Acudiante</th>
+      <th>Salon</th>
+      <th>Email</th>
+      <th>Usuario</th>
+      <th>Contraseña</th>
+      <th>Sexo</th>
+      <th>Contacto</th>
+      <th>Eliminar</th>
+  </tr>
+    <tr *ngFor="let docente of docente">
+      <td>{{docente.id}}</td>
+      <td>{{docente.documento}}</td>
+      <td>{{docente.apellido}}</td>
+      <td>{{docente.nombre}}</td>
+      <td>{{docente.fechan}}</td>
+      <td>{{docente.lic}}</td>
+      <td>{{docente.salon}}</td>
+      <td>{{docente.email}}</td>
+      <td>{{docente.usuario}}</td>
+      <td>{{docente.clave}}</td>
+      <td>{{docente.sexo}}</td>
+      <td>{{docente.telefono}}</td>
+      <td  class="fa fa-trash"><button (click)=cargardatos(docente.id)>Eliminar</button></td>
+    </tr>
+</table>

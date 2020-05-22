@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="fondo">
+    <div *ngIf="mostrarHome">
+        <div class="wrapper">
+            <div class="left">
+                <img src="https://lh3.googleusercontent.com/-fgQJiNVL3n8/W6mMOyo6cMI/AAAAAAAAAGs/tADnAvG1xucGZPGD8Ui2f4U4mapsfLawQCEwYBhgL/w140-h140-p/Administrador1.jpg" alt="user" width="100">
+                <h3>Sebastian </h3>
+                 <h4>Aponte Pertuz</h4>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Informacion</h3>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Email</h4>
+                            <p>sebastianaponte17@gmail.com</p>
+                         </div>
+                         <div class="data">
+                           <h4>Phone</h4>
+                            <p>3155921337</p>
+                      </div>
+                    </div>
+                </div>
+              
+              <div class="projects">
+                    <h3>Projects</h3>
+                    <div class="projects_data">
+                         <div class="data">
+                            <h4>Reciente</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                         </div>
+                         <div class="data">
+                           <h4>Mas Visto</h4>
+                            <p>dolor sit amet.</p>
+                      </div>
+                    </div>
+                </div>
+              
+                <div class="social_media">
+                    <ul>
+                      <li><a target="_blank" rel="noopener" href="https://www.facebook.com"><i class="fa fa-facebook-f"></i></a></li>
+                      <li><a target="_blank" rel="noopener" href="https://twitter.com/?lang=es"><i class="fa fa-twitter"></i></a></li>
+                      <li><a target="_blank" rel="noopener" href="https://www.instagram.com/?hl=es-la"><i class="fa fa-instagram"></i></a></li>
+                  </ul>
+              </div>
+            </div>
+        </div>
+    </div>  
+<div class="menu-bar">
+  <ul >
+  <li class="active"><a routerLink="admin" (click)="ocultarTodo()"><i class="fa fa-home"></i> Home</a></li>
+  <li><a><i class="fa fa-user"></i> Registrar</a>
+  <div class="sub-menu-1">
+    <ul>
+      <li ><a routerLink="admin"(click)="MostrarRd()">Docente</a></li>
+      <li ><a routerLink="admin" (click)="MostrarRe()">Estudiante</a></li>
+    </ul>
+  </div>
+  </li>
+  <li ><a routerLink="admin"><i class="fa fa-user"></i> Ver Personal</a>
+    <div class="sub-menu-1">
+      <ul>
+        <li ><a routerLink="admin"(click)="MostrarTd()">Docente</a></li>
+        <li ><a routerLink="admin" (click)="MostrarTe()">Estudiante</a></li>
+      </ul>
+    </div>
+  </li>
+  <li ><a routerLink="admin"><i class="fa fa-envelope"></i> Imail</a>
+    <div class="sub-menu-1">
+      <ul>
+        <li ><a routerLink="admin"(click)="MostrarRd()">Docente</a></li>
+        <li ><a routerLink="admin" (click)="MostrarRe()">Estudiante</a></li>
+        <li class="hover-me"><a routerLink="admin">Ver</a><i class="fa fa-angle-right"></i>
+        <div class="sub-menu-2">
+          <ul>
+              <li ><a routerLink="admin" (click)="MostrarTe()">Tabla Docentes</a></li>
+              <li ><a routerLink="admin" (click)="MostrarTd()">Tabla Estudiantes</a></li>
+          </ul>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li ><a routerLink="admin"><i class="fa fa-phone"></i> Contacto</a>
+    <div class="sub-menu-1">
+      <ul>
+        <li ><a routerLink="admin"(click)="MostrarRd()">Docente</a></li>
+        <li ><a routerLink="admin" (click)="MostrarRe()">Estudiante</a></li>
+      </ul>
+    </div>
+  </li>
+  <li ><a routerLink="admin"><i class="fa fa-sort-down"></i> </a>
+    <div class="sub-menu-1">
+        <ul>
+          <li ><a routerLink="admin">Perfil</a></li>
+          <li ><a routerLink="admin">Configuracion</a></li>
+          <li ><a routerLink="admin">Ayuda</a></li>
+          <nav style="text-align: center">
+  <li ><a href="" routerLink="/login">Salir</a></li>
+  </nav>
+        </ul>
+      </div>
+  </li>
+</ul>
+<div *ngIf="mostrarRestudiantes">
+<app-registrar-estudiante></app-registrar-estudiante></div>
+  <div *ngIf="mostrarRdocente">
+  <app-registrar-docente></app-registrar-docente></div>
+  <div *ngIf="mostrarEestudiantes">
+  <app-editar-e></app-editar-e></div>
+  <div *ngIf="mostrarEdocente">
+  <app-editar-d></app-editar-d></div>
+  <div *ngIf="mostrarElestudiantes">
+  <app-eliminar-e></app-eliminar-e></div>
+  <div *ngIf="mostrarEldocente">
+  <app-eliminar-d></app-eliminar-d></div>
+  <div *ngIf="mostrarTestudiantes">
+  <app-tabla-e></app-tabla-e></div>
+  <div *ngIf="mostrarTdocente">
+  <app-tabla-d></app-tabla-d></div>
+</div>
+</div>

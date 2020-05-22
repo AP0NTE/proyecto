@@ -1,0 +1,82 @@
+<div class="Docentes">
+  <div *ngIf="mostrarEdocente">
+    <div class="Estudiante">
+      <h1>Editar o eliminar Docentes</h1>
+      <label ><a><i class="fa fa-envelope"></i> Imail</a></label><input [(ngModel)]="docentes.email" type="text" placeholder="Enter Email" name="email">
+      <label ><a><i class="fa fa-user"></i> Nombre</a></label><input [(ngModel)]="docentes.nombre" type="text" placeholder="Nombre" name="nombre">
+      <label ><a><i class="fa fa-user"></i> Usuario</a></label><input [(ngModel)]="docentes.usuario" type="text" placeholder="Usuario" name="usuario">
+      <label ><a><i class="fa fa-user"></i> Apellidos</a></label><input [(ngModel)]="docentes.apellido" type="text" placeholder="Apellidos" name="Apellidos">
+      <label ><a><i class="fa fa-unlock-alt"></i> Contraseña</a></label><input [(ngModel)]="docentes.clave" type="text" placeholder="Contraseña" name="psw">
+      <label ><a><i class="fa fa-calendar"></i> FechaN</a></label><input type="date" name="fechaN" [(ngModel)]="docentes.fechan">
+      <label ><a><i class="fa fa-graduation-cap"></i> Asignar Curso</a></label>
+      <select [(ngModel)]="docentes.salon">
+        <option selected>Seleccione </option>
+        <option value="°6">°6</option>
+        <option value="°7">°7</option>
+        <option value="°8">°8</option>
+        <option value="°9">°9</option>
+        <option value="°10">°10</option>
+        <option value="°11">°11</option>
+      </select>
+      <label ><a><i class="fa fa-id-card"></i> Documento</a></label><input [(ngModel)]="docentes.documento" type="text" placeholder="Documento" name="documento" required>
+      <label ><a><i class="fa fa-users"></i> Lic </a></label><select [(ngModel)]="docentes.lic">
+        <option selected>Seleccione </option>
+        <option value="°Matematicas">°Matematicas</option>
+        <option value="°Sociales">°Sociales</option>
+        <option value="°Lenguas">°Lenguas</option>
+        <option value="°Biologia">°Biologia</option>
+        <option value="°Artistica">°Artistica</option>
+        <option value="°Deportes">°Deportes</option>
+      </select>
+      <label ><a><i class="fa fa-phone"></i> Telefono</a></label><input [(ngModel)]="docentes.telefono" type="text" placeholder="Telefono" name="telefono" required>
+      <label ><a><i class="fa fa-male"></i> Sexo</a></label><select [(ngModel)]="docentes.sexo">
+        <option selected>Seleccione</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+      </select>
+      <label ><a><i class="fa fa-male"></i> Estado</a></label><select [(ngModel)]="docentes.estado">
+        <option selected>Seleccione</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+      <br>
+      <button (click)="MostrarTd()">Volver</button>
+      <button (click)="delete()" class="fa fa-trash">Eliminar</button> 
+      <button (click)="update()"class="fa fa-edit"> Actualizar</button>  
+       
+    </div>
+  </div>
+  <div *ngIf="mostrarTdocente">
+<input type="text" id="myInput"  placeholder="Buscar.." name="filtro"[(ngModel)]='filtro'>
+  <table >
+    <tr>
+      <th>Id</th>
+      <th>Documento</th>
+      <th>Apellidos</th>
+      <th>Nombre</th>
+      <th>Fecha  De Nacimiento</th>
+      <th>Licenciado</th>
+      <th>Salones Asignados</th>
+      <th>Email</th>
+      <th>Usuario</th>
+      <th>Contraseña</th>
+      <th>Sexo</th>
+      <th>Contacto</th>
+      <th>ver datos</th>
+    </tr>
+    <tr *ngFor="let docente of docente|filtroDocente:filtro">
+      <td>{{docente.id}}</td>
+      <td>{{docente.documento}}</td>
+      <td>{{docente.apellido}}</td>
+      <td>{{docente.nombre}}</td>
+      <td>{{docente.fechan}}</td>
+      <td>{{docente.lic}}</td>
+      <td>{{docente.salon}}</td>
+      <td>{{docente.email}}</td>
+      <td>{{docente.usuario}}</td>
+      <td>{{docente.clave}}</td>
+      <td>{{docente.sexo}}</td>
+      <td>{{docente.telefono}}</td>
+      <td><a (click)="MostrarEdd2(docente.id)">ver</a></td>
+    </tr>
+  </table></div></div>

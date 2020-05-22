@@ -1,0 +1,44 @@
+<router-outlet></router-outlet>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="cuadro">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<div class="circulo">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<div class="fondo"> 
+    <div class="login-box">
+        <img src="https://sjt.cl/wp-content/themes/sjt-theme/images/logo-og.jpg" class="avatar" alt="Avatar Image">
+        <h1>Entre aquí</h1>
+        <form>
+          <label for="username">Nombre de usuario</label>
+          <input type="text" placeholder="Nombre de usuario" [(ngModel)]="usuarios" [ngModelOptions]="{standalone: true}">
+          <label for="password">Contraseña</label>
+          <input type="password" placeholder="Contraseña" [(ngModel)]="clave" [ngModelOptions]="{standalone: true}">
+          
+          <nav style="text-align: center">
+            <input type="submit" (click)="login()" value="Iniciar sesión">
+            </nav>
+            <div><router-outlet></router-outlet></div>
+          <a href="#">¿Perdiste tu contraseña?</a><br>
+          <a href="#">¿No tienes una cuenta?</a>
+        </form>
+      </div> 
+</div>

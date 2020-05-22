@@ -1,0 +1,82 @@
+<div class="Estudiantes">
+  <div *ngIf="mostrarEestudiante">
+    <div class="Estudiante">
+      <h1>Editar o eliminar Estudiantes</h1>
+      <label ><a><i class="fa fa-envelope"></i> Imail</a></label><input [(ngModel)]="estudiantes.email" type="text" placeholder="Enter Email" name="email">
+      <label ><a><i class="fa fa-user"></i> Nombre</a></label><input [(ngModel)]="estudiantes.nombre" type="text" placeholder="Nombre" name="nombre">
+      <label ><a><i class="fa fa-user"></i> Usuario</a></label><input [(ngModel)]="estudiantes.usuario" type="text" placeholder="Usuario" name="usuario">
+      <label ><a><i class="fa fa-user"></i> Apellidos</a></label><input [(ngModel)]="estudiantes.apellido" type="text" placeholder="Apellidos" name="Apellidos">
+      <label ><a><i class="fa fa-unlock-alt"></i> Contraseña</a></label><input [(ngModel)]="estudiantes.clave" type="text" placeholder="Contraseña" name="psw">
+      <label ><a><i class="fa fa-calendar"></i> FechaN</a></label><input type="date" name="fechaN" [(ngModel)]="estudiantes.fechan">
+      <label ><a><i class="fa fa-graduation-cap"></i> Asignar Curso</a></label>
+      <select [(ngModel)]="estudiantes.salon">
+        <option selected>Seleccione </option>
+        <option value="°6">°6</option>
+        <option value="°7">°7</option>
+        <option value="°8">°8</option>
+        <option value="°9">°9</option>
+        <option value="°10">°10</option>
+        <option value="°11">°11</option>
+      </select>
+      <label ><a><i class="fa fa-id-card"></i> Documento</a></label><input [(ngModel)]="estudiantes.documento" type="text" placeholder="Documento" name="documento" required>
+      <label ><a><i class="fa fa-users"></i> Lic </a></label><select [(ngModel)]="estudiantes.lic">
+        <option selected>Seleccione </option>
+        <option value="°Matematicas">°Matematicas</option>
+        <option value="°Sociales">°Sociales</option>
+        <option value="°Lenguas">°Lenguas</option>
+        <option value="°Biologia">°Biologia</option>
+        <option value="°Artistica">°Artistica</option>
+        <option value="°Deportes">°Deportes</option>
+      </select>
+      <label ><a><i class="fa fa-phone"></i> Telefono</a></label><input [(ngModel)]="estudiantes.telefono" type="text" placeholder="Telefono" name="telefono" required>
+      <label ><a><i class="fa fa-male"></i> Sexo</a></label><select [(ngModel)]="estudiantes.sexo">
+        <option selected>Seleccione</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+      </select>
+      <label ><a><i class="fa fa-male"></i> Estado</a></label><select [(ngModel)]="estudiantes.estado">
+        <option selected>Seleccione</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+      <br>
+      <button (click)="MostrarTd()">Volver</button>
+      <button (click)="delete()" class="fa fa-trash">Eliminar</button> 
+      <button (click)="update()"class="fa fa-edit"> Actualizar</button>  
+       
+    </div>
+  </div>
+  <div *ngIf="mostrarTestudiante">
+<input type="text" id="myInput"  placeholder="Buscar.." name="filtro"[(ngModel)]='filtro'>
+  <table >
+    <tr>
+      <th>Id</th>
+      <th>Documento</th>
+      <th>Apellidos</th>
+      <th>Nombre</th>
+      <th>Fecha  De Nacimiento</th>
+      <th>Acudiente</th>
+      <th>Salones Asignados</th>
+      <th>Email</th>
+      <th>Usuario</th>
+      <th>Contraseña</th>
+      <th>Sexo</th>
+      <th>Contacto</th>
+      <th>ver datos</th>
+    </tr>
+    <tr *ngFor="let estudiante of estudiante|filtroEstudiante:filtro">
+      <td>{{estudiante.id}}</td>
+      <td>{{estudiante.documento}}</td>
+      <td>{{estudiante.apellido}}</td>
+      <td>{{estudiante.nombre}}</td>
+      <td>{{estudiante.fechan}}</td>
+      <td>{{estudiante.acudiente}}</td>
+      <td>{{estudiante.salon}}</td>
+      <td>{{estudiante.email}}</td>
+      <td>{{estudiante.usuario}}</td>
+      <td>{{estudiante.clave}}</td>
+      <td>{{estudiante.sexo}}</td>
+      <td>{{estudiante.telefono}}</td>
+      <td><a (click)="MostrarEdd2(estudiante.id)">ver</a></td>
+    </tr>
+  </table></div></div>
